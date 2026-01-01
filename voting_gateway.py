@@ -32,7 +32,7 @@ def projects():
 
 
 @app.route("/results")
-def projects():
+def results():
     return requests.get(f"{VOTE_MGMT_URL}/results").json()
 
 
