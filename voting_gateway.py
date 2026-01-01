@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 CORS(app, resources={r"/*": {"origins": "*"}})
 
-VOTE_MGMT_URL = "http://VOTE-MANAGEMENT-IP:5001"
+VOTE_MGMT_URL = "http://10.100.20.139:5001"
 
 @app.route("/projects")
 def projects():
