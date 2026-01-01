@@ -10,25 +10,25 @@ VOTE_MGMT_URL = "http://10.100.20.139:5001"
 
 @app.route("/projects")
 def projects():
-    # return requests.get(f"{VOTE_MGMT_URL}/projects").json()
-    static_projects = [
-        {
-            "id": 1,
-            "name": "Projet Alpha",
-            "logo_url": "https://via.placeholder.com/80?text=Alpha"
-        },
-        {
-            "id": 2,
-            "name": "Projet Beta",
-            "logo_url": "https://via.placeholder.com/80?text=Beta"
-        },
-        {
-            "id": 3,
-            "name": "Projet Gamma",
-            "logo_url": "https://via.placeholder.com/80?text=Gamma"
-        }
-    ]
-    return jsonify(static_projects)
+    return requests.get(f"{VOTE_MGMT_URL}/projects").json()
+    # static_projects = [
+    #     {
+    #         "id": 1,
+    #         "name": "Projet Alpha",
+    #         "logo_url": "https://via.placeholder.com/80?text=Alpha"
+    #     },
+    #     {
+    #         "id": 2,
+    #         "name": "Projet Beta",
+    #         "logo_url": "https://via.placeholder.com/80?text=Beta"
+    #     },
+    #     {
+    #         "id": 3,
+    #         "name": "Projet Gamma",
+    #         "logo_url": "https://via.placeholder.com/80?text=Gamma"
+    #     }
+    # ]
+    # return jsonify(static_projects)
 
 @app.route("/vote", methods=["POST"])
 def vote():
