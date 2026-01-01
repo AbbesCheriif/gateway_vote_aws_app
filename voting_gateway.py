@@ -33,9 +33,9 @@ def projects():
 @app.route("/vote", methods=["POST"])
 def vote():
     # API publique (via NAT)
-    ip_info = requests.get("http://ip-api.com/json").json()
-    if ip_info.get("country") != "France":
-        return jsonify({"error": "Vote refusé"}), 403
+    # ip_info = requests.get("http://ip-api.com/json").json()
+    # if ip_info.get("country") != "France":
+    #     return jsonify({"error": "Vote refusé"}), 403
 
     return requests.post(f"{VOTE_MGMT_URL}/vote", json=request.json).json()
 
