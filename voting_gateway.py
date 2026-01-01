@@ -30,6 +30,12 @@ def projects():
     # ]
     # return jsonify(static_projects)
 
+
+@app.route("/results")
+def projects():
+    return requests.get(f"{VOTE_MGMT_URL}/results").json()
+
+
 @app.route("/vote", methods=["POST"])
 def vote():
     # API publique (via NAT)
